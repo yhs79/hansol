@@ -1,0 +1,58 @@
+<style>
+.row{
+  
+  
+  width:122.5%;
+
+}
+</style>
+<style>
+.a{
+      font-size:30px;
+}
+</style> 
+<style>
+em{
+  font-size: 25px;
+}
+</style>
+
+<div class="a"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></div></br><strong><em>#<%=@i.id%></em></strong>
+</br></br>
+<table class="table table-hover" style="text-align:center">
+<tr>
+<td><strong>제목</strong></td>
+<td><strong>작성자</strong></td>
+<td><strong>작성일</strong></td>
+
+</tr>
+<tr>
+<td>
+<% if @i.user_title=="" %>
+제목 없음
+<% else %>
+<%=@i.user_title%>
+<% end %>
+</td>
+<td><%=@i.user_email%></td>
+<td><%=@i.user_date%></td>
+</tr>
+<tr><td></td><td></td><td></td></tr>
+</table>
+<div class="row">
+  <div class="col-sm-5 col-md-10">
+    <div class="thumbnail">
+      <img src="<%=@i.user_img%>" alt="None Image">
+      <div class="caption">
+      <strong>닉네임</strong></br>
+        <div><% if @i.user_name==""%>익명<% else%> <%=@i.user_name%> <% end %></div></br></br>
+        <strong>게시글</strong></br>
+        <%=@i.user_content%></br></br> 
+        <a href="/home/search_1/<%=@i.id%>"><input type="button" value="수정"></a>
+        <a href="/home/search/<%=@i.id%>"><input type="button" value="삭제"></a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
