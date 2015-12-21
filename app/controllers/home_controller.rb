@@ -53,6 +53,7 @@ before_action :authenticate_admin!
 
   def modify
   	@i=Post.find(params[:id])
+    @i.user_title=params[:modify_title]
   	@i.user_name=params[:modify_name]
   	@i.user_content=params[:modify_content]
   	@i.user_img=params[:modify_img]

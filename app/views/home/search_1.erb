@@ -24,8 +24,18 @@
 <p class="b">Modify</p></br>
 
 <form action="/home/modify/<%=@i.id%>">
+<div class="form-group">
+    <label for="modify_title">제목</label>
+    <input type="string" class="form-control" 
+    <% if @i.user_title==""%>
+    placeholder="제목 없음"
+    <% else %>
+    value="<%=@i.user_title%>"
+    <% end %>
+    name="modify_title">
+  </div>
   <div class="form-group">
-    <label for="modify_name">이름</label>
+    <label for="modify_name">닉네임</label>
     <input type="string" class="form-control" 
     <% if @i.user_name==""%>
     placeholder="홍길동"
